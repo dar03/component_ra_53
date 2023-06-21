@@ -1,0 +1,22 @@
+.cardsView {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 1490px) {
+    .cardsView {
+      padding-left: 4.70%;
+      padding-right: 5.04%;
+    }
+  }
+  
+  @media (max-width: 1300px) {
+    .cardsView {
+      justify-content: space-around;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
