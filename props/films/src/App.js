@@ -6,6 +6,8 @@ function App() {
   return (
     <div className="App">
       <Stars count={5}/>
+      <br/>
+      <Stars count={1}/>
     </div>
   );
 }
