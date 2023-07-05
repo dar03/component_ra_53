@@ -1,0 +1,43 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .color-converter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background .4s ease-in-out;
+  }
+  
+  .color-converter.error {
+    background: #E94B35;
+  }
+  
+  .hex-field,
+  .rgb-field {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  
+  .hex-field {
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 1px solid #8D8D8D;
+  }
+  
+  .rgb-field {
+    margin-top: 5px;
+    padding: 0 10px;
+    color: #FFFFFF;
+    background-color: #000000;
+    opacity: 0.45;
+  }
+  
