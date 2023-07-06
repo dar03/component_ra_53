@@ -3,10 +3,18 @@ import InputForm from './InputForm';
 import List from './List';
 import shortid from 'shortid';
 
+
+var rDate;
+
 function valid(forms) {
+  rDate = forms.date;
+  forms.date = rDate.split('-').reverse().join('.');
   if (forms.date === '' || forms.distance === '') {
     return false;
   }
+  // if (!forms.date.match([0-9]{4}-(0[1-9]|1[0|1|2])-(0[1-9]|1[0-9]|2[0-9]|3[0|1]))) {
+  //   return false;
+  // }
   if (!forms.date.match(/^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.]([0]?[1-9]|[1][0-2])[.]([0-9]{4}|[0-9]{2})$/)) {
     return false;
   }
@@ -19,8 +27,11 @@ function Steps() {
 
 
   function handlerOK(e) {
-    e.preventDefault();
 
+
+alert(forms.date)
+
+    e.preventDefault();
     if (valid(forms)) {
       const exists = distance.findIndex((item) => item.date === forms.date)
       if (exists !== -1) {
