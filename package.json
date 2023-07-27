@@ -12,6 +12,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "@types/moment": "^2.13.0",
     "typescript": "^5.1.3"
   },
   "scripts": {
