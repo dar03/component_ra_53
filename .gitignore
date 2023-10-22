@@ -678,3 +678,5 @@ ts-app/src/logo.svg
 ts-app/src/react-app-env.d.ts
 ts-app/src/reportWebVitals.ts
 ts-app/src/setupTests.ts
+node_modules
+node_modules
