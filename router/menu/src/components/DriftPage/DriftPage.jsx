@@ -1,7 +1,4 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
-
-function DriftPage() {
+export default function DriftPage() {
   return (
     <article className="article">
       <h1 className="article__title">Дрифт-такси</h1>
@@ -18,9 +15,3 @@ function DriftPage() {
     </article>
   )
 }
-
-// DriftPage.propTypes = {
-
-// }
-
-export default DriftPage

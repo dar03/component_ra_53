@@ -1,24 +1,25 @@
-import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Menu from './components/Menu';
-import HomePage from './components/HomePage';
-import DriftPage from './components/DriftPage';
-import TimeAttackPage from './components/TimeAttackPage';
-import ForzaPage from './components/ForzaPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Menu from './components/Menu/Menu';
+import HomePage from './components/HomePage/HomePage';
+import DriftPage from './components/DriftPage/DriftPage';
+import ForzaPage from './components/ForzaPage/ForzaPage';
+import TimeAttackPage from './components/TimeAttackPage/TimeAttackPage';
 import './App.css';
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
         <Menu />
         <div className="page">
-          <Route path="/" exact element={HomePage} />
-          <Route path="/drift" component={DriftPage} />
-          <Route path="/timeattack" component={TimeAttackPage} />
-          <Route path="/forza" component={ForzaPage} />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/drift" element={<DriftPage />} />
+            <Route path="/timeattack" element={<TimeAttackPage />} />
+            <Route path="/forza" element={<ForzaPage />} />
+          </Routes>
         </div>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }

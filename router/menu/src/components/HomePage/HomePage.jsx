@@ -1,7 +1,4 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
-
-function HomePage() {
+export default function HomePage() {
   return (
     <article className="article">
       <h1 className="article__title">Гоночн​ое такси</h1>
@@ -14,9 +11,3 @@ function HomePage() {
     </article>
   )
 }
-
-// HomePage.propTypes = {
-
-// }
-
-export default HomePage

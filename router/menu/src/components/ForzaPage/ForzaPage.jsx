@@ -1,7 +1,4 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
-
-function ForzaPage() {
+export default function ForzaPage() {
   return (
     <article className="article">
       <h1 className="article__title">Forza Karting Sochi</h1>
@@ -18,9 +15,3 @@ function ForzaPage() {
     </article>
   )
 }
-
-// ForzaPage.propTypes = {
-
-// }
-
-export default ForzaPage
