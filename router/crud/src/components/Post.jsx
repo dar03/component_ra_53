@@ -1,22 +1,22 @@
-import React, {useState} from "react";
-import { Navigate} from "react-router-dom";
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 import moment from "moment";
 import 'moment/locale/ru';
 
 moment.locale('ru');
 
-export default function Post({post}) {
+export default function Post({ post }) {
 
     const [redirect, setRedirect] = useState(false);
 
     if (!(post)) return null;
 
-    const {created, content} = post;
+    const { created, content } = post;
 
     const createdTxt = moment(created).startOf('minute').fromNow();
 
     if (redirect)
-        return <Navigate to="/posts/:id" replace={true} push/>
+        return <Navigate to="/posts/:id" replace={true} push />
 
     return (
         <div className="card w-50">

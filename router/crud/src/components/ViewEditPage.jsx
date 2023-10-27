@@ -1,14 +1,14 @@
 import Post from "./Post";
 import CreateEditPage from "./CreateEditPage";
-import React, {useState} from "react";
-import {useParams, Navigate} from "react-router-dom";
+import React, { useState } from "react";
+import { useParams, Navigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
 export default function ViewEditPage() {
 
-    const {id} = useParams();
+    const { id } = useParams();
 
-    const [data, loading, error, doFetch, redirect] = useFetch({url: '/posts'}, []);
+    const [data, loading, error, doFetch, redirect] = useFetch({ url: '/posts' }, []);
 
     const post = data.length ? data.filter((item) => item.id === Number(id))[0] : null;
 
@@ -31,13 +31,13 @@ export default function ViewEditPage() {
         return <p>Error</p>;
 
     if (redirect)
-        return <Navigate to="/" replace={true}/>
+        return <Navigate to="/" replace={true} />
 
     return (
         <>
             {!actionEdit ?
                 <>
-                    <Post post={post}/>
+                    <Post post={post} />
                     <div className="card w-50">
                         <div className="card-body text-right">
                             <button className="btn btn-outline-info" onClick={() => setActionEdit(true)}>Изменить
@@ -47,7 +47,7 @@ export default function ViewEditPage() {
                     </div>
                 </>
                 :
-                <CreateEditPage post={post}/>
+                <CreateEditPage post={post} />
             }
         </>
     );

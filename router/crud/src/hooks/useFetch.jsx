@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function useFetch(initialOptions, initialData) {
     const [options, setOptions] = useState(initialOptions);
@@ -22,7 +22,7 @@ export default function useFetch(initialOptions, initialData) {
                 if (options.method === 'POST') {
                     requestOptions = {
                         method: options.method,
-                        headers: {'Content-Type': 'application/json'},
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(options.body)
                     }
                 } else if (options.method === 'DELETE') {

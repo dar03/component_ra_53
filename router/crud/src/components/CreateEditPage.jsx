@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import {Link, Navigate} from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
-export default function CreateEditPage({post}) {
+export default function CreateEditPage({ post }) {
 
     const [text, setText] = useState(post ? post.content : null);
 
@@ -18,12 +18,12 @@ export default function CreateEditPage({post}) {
             url: '/posts',
             redirect: true,
             method: 'POST',
-            body: {id: post ? post.id : 0, content: text}
+            body: { id: post ? post.id : 0, content: text }
         });
     }
 
     if (redirect)
-        return <Navigate to="/" replace={true}/>
+        return <Navigate to="/" replace={true} />
 
     return (
         <form onSubmit={onSave} className="card w-50 text-right">
@@ -33,7 +33,7 @@ export default function CreateEditPage({post}) {
                 </Link>
                 {error && <p>Error {error}</p>}
                 <div className="form-group">
-                    <textarea className="form-control" onChange={onChange} value={text}/>
+                    <textarea className="form-control" onChange={onChange} value={text} />
                 </div>
                 {loading ? <p>Saving...</p> :
                     <button type="submit" className="btn btn-primary">{post ? 'Сохранить' : 'Опубликовать'}</button>
