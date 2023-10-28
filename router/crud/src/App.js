@@ -1,23 +1,27 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import CreateEditPage from "./components/CreateEditPage";
-import ListPage from "./components/ListPage";
-import ViewEditPage from "./components/ViewEditPage";
 import React from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import AddPanel from './components/AddPanel'
+import AddPost from "./components/AddPost";
+import PostList from './components/PostList'
+import PostPage from "./components/PostPage";
+import EditPostPage from "./components/EditPostPage";
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Routes>
-          <Route path="/" component={ListPage} />
-          <Route path="/posts/new" exact component={CreateEditPage} />
-          <Route exact path="/posts/:id(\d+)" element={ViewEditPage} />
-        </Routes>
+      <div className="facebook">
+        <AddPanel />
+        <div className="page">
+          <Routes>
+            <Route path="/" element={<PostList />} />
+            <Route path="/posts/new" element={<AddPost />} />
+            <Route path="/posts/:productId" element={<PostPage />} />
+            <Route path="/edit-post/:productId" element={<EditPostPage />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );
 }
 
-export default App;
+export default App
